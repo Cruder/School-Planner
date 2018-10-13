@@ -8,6 +8,9 @@ ruby '2.5.1'
 # Server
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
+
+# Database
+gem 'annotate'
 gem 'sqlite3'
 
 # Perf
