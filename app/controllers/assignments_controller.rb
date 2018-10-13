@@ -6,7 +6,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
-    @assignments = Assignment.all
+    @assignments = Assignment.includes(:discipline).all
   end
 
   # GET /assignments/1
