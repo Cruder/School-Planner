@@ -5,3 +5,7 @@ fr:
   time:
     formats:
       default: "%d/%m/%Y %H:%M"
+  activerecord:
+    attributes:
+      assignment:
+        due_to: Date de livraison

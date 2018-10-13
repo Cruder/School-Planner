@@ -1,3 +1,16 @@
 // Place all the styles related to the Assignments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'shared/variables';
+
+.assignment-container {
+  border: 1px solid $light-grey;
+  border-radius: 6px;
+  margin: 40px 0;
+  padding: 20px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
+
+  a {
+    margin: 0 5px;
+  }
+}

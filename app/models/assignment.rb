@@ -17,6 +17,9 @@ class Assignment < ApplicationRecord
   # Relations
   belongs_to :discipline
 
-  # Delegation
+  # Delegations
   delegate :name, to: :discipline, prefix: true
+
+  # Scopes
+  scope :up_to_date, -> { where('due_to >= ?', Date.today) }
 end

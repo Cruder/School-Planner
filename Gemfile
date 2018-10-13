@@ -20,6 +20,7 @@ gem 'turbolinks', '~> 5'
 # Assets
 gem 'bootstrap'
 gem 'coffee-rails', '~> 4.2'
+gem 'font-awesome-rails'
 gem 'haml'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
