@@ -26,7 +26,7 @@ end
 
 group :development do
   # linters
-  gem 'overcommit'
+  gem 'overcommit', require: false
   gem 'rubocop', require: false
 
   # debug
