@@ -1,41 +1,43 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class AssignmentsTest < ApplicationSystemTestCase
   setup do
     @assignment = assignments(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit assignments_url
-    assert_selector "h1", text: "Assignments"
+    assert_selector 'h1', text: 'Assignments'
   end
 
-  test "creating a Assignment" do
+  test 'creating a Assignment' do
     visit assignments_url
-    click_on "New Assignment"
+    click_on 'New Assignment'
 
-    click_on "Create Assignment"
+    click_on 'Create Assignment'
 
-    assert_text "Assignment was successfully created"
-    click_on "Back"
+    assert_text 'Assignment was successfully created'
+    click_on 'Back'
   end
 
-  test "updating a Assignment" do
+  test 'updating a Assignment' do
     visit assignments_url
-    click_on "Edit", match: :first
+    click_on 'Edit', match: :first
 
-    click_on "Update Assignment"
+    click_on 'Update Assignment'
 
-    assert_text "Assignment was successfully updated"
-    click_on "Back"
+    assert_text 'Assignment was successfully updated'
+    click_on 'Back'
   end
 
-  test "destroying a Assignment" do
+  test 'destroying a Assignment' do
     visit assignments_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on 'Destroy', match: :first
     end
 
-    assert_text "Assignment was successfully destroyed"
+    assert_text 'Assignment was successfully destroyed'
   end
 end
