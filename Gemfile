@@ -11,6 +11,7 @@ gem 'rails', '~> 5.2.1'
 
 # Database
 gem 'annotate'
+gem 'pg'
 gem 'sqlite3'
 
 # Perf
@@ -38,6 +39,7 @@ group :development do
 
   # debug
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'pry-rails'
   gem 'web-console', '>= 3.3.0'
 
   # cache

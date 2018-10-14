@@ -22,4 +22,9 @@ class Assignment < ApplicationRecord
 
   # Scopes
   scope :up_to_date, -> { where('due_to >= ?', Date.today) }
+
+  def self.by_day
+    sql_date = Arel.sql('DATE_TRUNC(\'day\', "assignments"."due_to") AS date')
+    select(arel_table[Arel.star], sql_date).group_by(&:date)
+  end
 end

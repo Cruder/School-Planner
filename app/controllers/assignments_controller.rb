@@ -6,7 +6,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
-    @assignments = Assignment.includes(:discipline).up_to_date.order(:due_to).all
+    @assignments_grouped_by_day = Assignment.includes(:discipline).up_to_date.by_day
   end
 
   # GET /assignments/1

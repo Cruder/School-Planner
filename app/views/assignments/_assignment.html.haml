@@ -4,7 +4,7 @@
       %i.fa.fa-pencil
     = link_to assignment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' do
       %i.fa.fa-times
-  %h2= assignment.title
-  %p= l assignment.due_to
+  %h3= assignment.title
+  %p Pour le #{l assignment.due_to}
   %p= assignment.description
   = assignment.discipline_name
