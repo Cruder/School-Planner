@@ -11,7 +11,7 @@ gem 'rails', '~> 5.2.1'
 
 # Database
 gem 'annotate'
-gem 'pg'
+gem 'mysql2'
 gem 'sqlite3'
 
 # Perf
@@ -29,7 +29,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  # Debug
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-rails'
 end
 
 group :development do
@@ -39,7 +41,6 @@ group :development do
 
   # debug
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'pry-rails'
   gem 'web-console', '>= 3.3.0'
 
   # cache
@@ -48,7 +49,9 @@ group :development do
 end
 
 group :test do
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '>= 4.0.0.rc1', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
