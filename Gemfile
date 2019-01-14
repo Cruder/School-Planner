@@ -11,7 +11,7 @@ gem 'rails', '~> 5.2.1'
 
 # Database
 gem 'annotate'
-gem 'mysql2'
+gem 'pg'
 gem 'sqlite3'
 
 # Perf

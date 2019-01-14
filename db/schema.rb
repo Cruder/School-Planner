@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2018_10_13_142608) do
 
-  create_table "assignments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
     t.bigint "discipline_id"
     t.string "title"
     t.text "description"
@@ -24,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_10_13_142608) do
     t.index ["discipline_id"], name: "index_assignments_on_discipline_id"
   end
 
-  create_table "disciplines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "disciplines", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false

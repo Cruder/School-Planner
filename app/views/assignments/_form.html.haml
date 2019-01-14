@@ -7,5 +7,11 @@
       %ul
         - assignment.errors.full_messages.each do |message|
           %li= message
+  .label Titre
+  = form.text_field :title
+  .label Matiere
+  = form.collection_select :discipline_id, Discipline.all, :id, :name
+  .label Description
+  = form.text_area :description
   .actions
     = form.submit

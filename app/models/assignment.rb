@@ -21,7 +21,7 @@ class Assignment < ApplicationRecord
   delegate :name, to: :discipline, prefix: true
 
   # Scopes
-  scope :up_to_date, -> { where('due_to >= ?', Date.today) }
+  scope :up_to_date, -> { where(arel_table[:due_to].gteq(Date.today)) }
 
   def self.by_day
     sql_date = Arel.sql('DATE_TRUNC(\'day\', "assignments"."due_to") AS date')
