@@ -32,6 +32,9 @@ group :development, :test do
   # Debug
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails'
+
+  # Specs
+  gem 'factory_bot_rails'
 end
 
 group :development do
