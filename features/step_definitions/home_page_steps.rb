@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Given(/^I am on the home page$/) do
-  visit '/'
+  visit '/pouet'
 end
 
 Given(/^A homework "(.*?)" is scheduled to tomorrow$/) do |text|
