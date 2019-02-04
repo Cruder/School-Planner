@@ -9,6 +9,7 @@ AllCops:
     - 'spec/*_helper.rb'
     - 'test/*_helper.rb'
     - 'Vagrantfile'
+    - 'lib/tasks/cucumber.rake'
 Metrics/MethodLength:
   Max: 15
 Documentation:

@@ -39,6 +39,7 @@ end
 
 group :development do
   # linters
+  gem 'brakeman', require: false
   gem 'overcommit', require: false
   gem 'rubocop', require: false
 
