@@ -16,7 +16,7 @@ RSpec.describe Assignment, type: :model do
         let!(:today_assignment) { create :assignment, due_to: Date.today }
         let!(:future_assignment) { create :assignment, due_to: Date.tomorrow }
 
-        it { is_expected.to eq [future_assignment] }
+        it { is_expected.to eq [today_assignment, future_assignment] }
       end
     end
   end
