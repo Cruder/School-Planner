@@ -5,12 +5,19 @@ jobs:
     environment:
       TEST_REPORTER_ID: 508631918d7814a171301e715eff51c2270bdb5688cf13567fbbc4f468900fc0
       CIRCLE_TEST_REPORTS: coverage
+
     docker:
       - image: circleci/ruby:2.5.1-node-browsers-legacy
         environment:
-          - RAILS_ENV=test
-          - RACK_ENV=test
+          RAILS_ENV: test
+          RACK_ENV: test
+          PGHOST: 127.0.0.1
+          PGUSER: root
+
       - image: circleci/postgres:11.1-alpine-postgis-ram
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: circle-test_test
 
     working_directory: ~/repo
 
