@@ -12,7 +12,6 @@ gem 'rails', '~> 5.2.1'
 # Database
 gem 'annotate'
 gem 'pg'
-gem 'sqlite3'
 
 # Perf
 gem 'bootsnap', '>= 1.1.0', require: false
