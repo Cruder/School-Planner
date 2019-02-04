@@ -31,11 +31,20 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/repo/tmp
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
       - run:
           name: Setup dependencies
           command: |
             bundle install --without production --path=${BUNDLE_PATH:-vendor/bundle}
             bundle exec rake db:create db:migrate
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       - run:
           name: Run backend tests
           command: |
