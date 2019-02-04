@@ -76,6 +76,17 @@ jobs:
           command: |
             ./tmp/cc-test-reporter sum-coverage tmp/codeclimate.*.json -p 1 -o tmp/codeclimate.total.json
             ./tmp/cc-test-reporter upload-coverage -i tmp/codeclimate.total.json
+
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://git.heroku.com/$HEROKU_APP_NAME.git master
+
 workflows:
   version: 2
 
@@ -88,3 +99,9 @@ workflows:
       - upload-coverage:
           requires:
              - backend-tests
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: feature/heroku
