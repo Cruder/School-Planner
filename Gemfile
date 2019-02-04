@@ -42,6 +42,8 @@ group :development do
   gem 'brakeman', require: false
   gem 'overcommit', require: false
   gem 'rubocop', require: false
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 
   # debug
   gem 'listen', '>= 3.0.5', '< 3.2'
