@@ -10,7 +10,7 @@ jobs:
         environment:
           - RAILS_ENV=test
           - RACK_ENV=test
-      - image: circleci/11.1-alpine-postgis
+      - image: circleci/postgres:11.1-alpine-postgis-ram
 
     working_directory: ~/repo
 
