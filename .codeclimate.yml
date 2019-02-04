@@ -1,5 +1,7 @@
 ---
 engines:
   rubocop:
-  channel: rubocop-0-63
-  enabled: true
+    channel: rubocop-0-63
+    enabled: true
+  brakeman:
+    enabled: true
