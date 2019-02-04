@@ -104,4 +104,4 @@ workflows:
             - backend-tests
           filters:
             branches:
-              only: feature/heroku
+              only: master
