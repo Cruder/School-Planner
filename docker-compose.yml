@@ -2,7 +2,9 @@ version: "3.3"
 
 services:
   web:
-    build: docker-web/
+    build:
+      context: .
+      dockerfile: docker-web/Dockerfile
     volumes:
       - .:/home/site/School-Planner
     ports:
