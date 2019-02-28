@@ -1,5 +1,9 @@
 FROM ruby:2.5.1
 
+
+RUN apt-get update
+RUN apt-get -y install nodejs net-tools
+
 # RUN mkdir -p /home/site/School-Planner
 VOLUME ["/School-Planner"]
 # EXPOSE 3000
