@@ -31,7 +31,6 @@ group :development, :test do
   # Debug
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails'
-  gem 'web-console', '>= 3.3.0'
 
   # Specs
   gem 'factory_bot_rails'
@@ -47,6 +46,7 @@ group :development do
 
   # debug
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
 
   # cache
   gem 'spring'
