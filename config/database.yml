@@ -10,7 +10,7 @@ default: &default
   timeout: 5000
   username: postgres
   password: postgres
-  host: postgres_db
+  host: <%= ENV.fetch("HOST") { 5 } %>
   port: 5432
 
 development:
