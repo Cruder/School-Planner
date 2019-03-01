@@ -1,6 +1,20 @@
 version: "3.3"
 
 services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - ./db_docker:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    container_name: postgres_db
+
+
+
   web:
     build:
       context: .
@@ -9,22 +23,8 @@ services:
       - .:/home/site/School-Planner
     ports:
       - "3000:3000"
-    depends_on:
-      - "postgres"
-    links:
-      - "postgres"
     command: >
       bash -c "rake db:create
       && rake db:migrate
       && rake db:seed
       && rails server -b 0.0.0.0"
-  postgres:
-    build: docker-db/
-    ports:
-      - "5342:5342"
-    command: >
-      bash -c "/etc/init.d/postgresql start"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-
